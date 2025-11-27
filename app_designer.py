@@ -7,6 +7,31 @@ from PyQt6.QtCore import pyqtSlot
 from PyQt6.QtGui import QIcon
 from PyQt6 import uic # Importa a biblioteca para carregar o .ui
 
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import db 
+
+# Conexão com o Firebase #########
+FIREBASE_CONFIG = {
+    'databaseURL': 'https://bengala-inteligente-default-rtdb.firebaseio.com/' 
+}
+SERVICE_ACCOUNT_FILE = 'bengala-inteligente-firebase-adminsdk-fbsvc-ba817b3255.json' 
+
+DB_ROOT_REF = None
+
+try:
+    # Tenta carregar a chave de serviço
+    cred = credentials.Certificate(SERVICE_ACCOUNT_FILE)
+    firebase_admin.initialize_app(cred, FIREBASE_CONFIG)
+    DB_ROOT_REF = db.reference() 
+    print("Firebase inicializado com sucesso.")
+except FileNotFoundError:
+    print(f"ERRO: Arquivo de credenciais '{SERVICE_ACCOUNT_FILE}' não encontrado.")
+    print("A funcionalidade Firebase estará desabilitada.")
+except Exception as e:
+    print(f"ERRO ao inicializar o Firebase: {e}")
+###################################
+
 class MainWindow(QMainWindow):
     """
     Janela Principal que carrega a interface do arquivo .ui
