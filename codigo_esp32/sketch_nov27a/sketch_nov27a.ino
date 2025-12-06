@@ -1,3 +1,14 @@
+// =============================
+//NOME DOS INTEGRANTES DO GRUPO:
+
+// Luan Sol Alves Neres
+// Luis Felipe Costa Pedro
+// Gabriel Alves Duarte
+// Caio Fontes dos Santos Manhães
+// Guilherme Monteiro de Oliveira
+// Gabriel Rogato Ribeiro
+
+// =============================
 #include <WiFi.h>
 #include <PubSubClient.h>
 #include <Wire.h>
@@ -17,7 +28,7 @@ Adafruit_MPU6050 mpu;
 float xPrev = 0, yPrev = 0, zPrev = 0;
 
 // =============================
-// LIMITES CALIBRADOS (COM BASE NOS SEUS TESTES)
+// LIMITES CALIBRADOS
 // =============================
 // Ruído ~0.00–0.05
 // Fraca: 0.10 – 1.8
@@ -181,7 +192,7 @@ void loop() {
     topic += cane_id;
     topic += "/batidas";
 
-    // JSON manual simples
+    // JSON simples
     String json = "{";
     json += "\"user_id\":\"";      json += user_id;        json += "\",";
     json += "\"cane_id\":\"";      json += cane_id;        json += "\",";

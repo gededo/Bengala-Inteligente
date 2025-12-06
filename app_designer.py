@@ -142,7 +142,7 @@ class MainWindow(QMainWindow):
 
 
     # =============================
-    # REGISTRO UNIFICADO (UI + CSV + Firebase)
+    # REGISTRO UNIFICADO
     # =============================
 
     def registrar_batida(self, intensidade_cod: str, tipo: str):
