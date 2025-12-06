@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>550</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Monitor de Bengala (QT Designer)</string>
+  </property>
+
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+
+    <!-- MARGENS -->
+    <property name="leftMargin">
+     <number>10</number>
+    </property>
+    <property name="topMargin">
+     <number>10</number>
+    </property>
+    <property name="rightMargin">
+     <number>10</number>
+    </property>
+    <property name="bottomMargin">
+     <number>10</number>
+    </property>
+
+    <!-- Última Batida Forte -->
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Última Batida Forte:</string>
+      </property>
+     </widget>
+    </item>
+
+    <item>
+     <widget class="QLabel" name="last_impact_label">
+      <property name="styleSheet">
+       <string notr="true">
+        font-size: 14pt; font-weight: bold; color: #333;
+        padding: 10px; border: 1px solid #ccc;
+        border-radius: 5px; background-color: #FAFAFA;
+       </string>
+      </property>
+      <property name="text">
+       <string>Nenhuma batida detectada.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+
+    <!-- Histórico -->
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Histórico de Batidas:</string>
+      </property>
+     </widget>
+    </item>
+
+    <item>
+     <widget class="QListWidget" name="history_list"/>
+    </item>
+
+    <!-- Simulação -->
+    <item>
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Simular Batidas:</string>
+      </property>
+     </widget>
+    </item>
+
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+
+      <item>
+       <widget class="QPushButton" name="simulate_weak_button">
+        <property name="styleSheet">
+         <string notr="true">
+          font-size: 11pt; padding: 8px;
+          background-color: #2196F3; color: white;
+          border-radius: 5px; border: none;
+         </string>
+        </property>
+        <property name="text">
+         <string>Fraca</string>
+        </property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QPushButton" name="simulate_medium_button">
+        <property name="styleSheet">
+         <string notr="true">
+          font-size: 11pt; padding: 8px;
+          background-color: #FFC107; color: black;
+          border-radius: 5px; border: none;
+         </string>
+        </property>
+        <property name="text">
+         <string>Média</string>
+        </property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QPushButton" name="simulate_strong_button">
+        <property name="styleSheet">
+         <string notr="true">
+          font-size: 11pt; padding: 8px;
+          background-color: #D32F2F; color: white;
+          border-radius: 5px; border: none;
+          font-weight: bold;
+         </string>
+        </property>
+        <property name="text">
+         <string>Forte</string>
+        </property>
+       </widget>
+      </item>
+
+     </layout>
+    </item>
+
+    <!-- =============================== -->
+    <!-- BOTÃO DE SINCRONIZAÇÃO OFFLINE -->
+    <!-- =============================== -->
+
+    <item>
+     <widget class="QPushButton" name="sync_button">
+      <property name="text">
+       <string>Sincronizar Dados Offline</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+        font-size: 12pt;
+        padding: 10px;
+        margin-top: 15px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 7px;
+        font-weight: bold;
+       </string>
+      </property>
+     </widget>
+    </item>
+
+   </layout>
+  </widget>
+ </widget>
+
+ <resources/>
+ <connections/>
+</ui>
